@@ -12,6 +12,7 @@ import TheHeader from "../components/molecules/TheHeader.vue";
 import FormApp from "../components/organisms/FormApp.vue";
 import MainOutputApp from "../components/organisms/MainOutputApp.vue"
 import ButtonApp from "../components/atoms/button/ButtonApp.vue"
+import useResize from "../composable/useResize"
 
 export default {
   name: "ViewHome",
