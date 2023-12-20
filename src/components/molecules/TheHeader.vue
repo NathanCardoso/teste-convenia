@@ -5,7 +5,7 @@
       <ParagraphHeader />
     </div>
     <div class="header__image">
-      <CalculatorSvg />
+      <CalculatorIcon />
     </div>
   </header>
 </template>
@@ -13,14 +13,14 @@
 <script>
 import TitleHeader from "../atoms/title/TitleHeader.vue";
 import ParagraphHeader from "../atoms/paragraph/ParagraphHeader.vue";
-import CalculatorSvg from "../atoms/icon-svg/CalculatorSvg.vue";
+import CalculatorIcon from "../atoms/svg/CalculatorIcon.vue";
 
 export default {
   functional: true,
   components: {
     TitleHeader,
     ParagraphHeader,
-    CalculatorSvg,
+    CalculatorIcon,
   },
 };
 </script>
