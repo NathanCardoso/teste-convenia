@@ -13,7 +13,7 @@
 <script>
 import TitleHeader from "../atoms/title/TitleHeader.vue";
 import ParagraphHeader from "../atoms/paragraph/ParagraphHeader.vue";
-import CalculatorSvg from "../atoms/svg/CalculatorSvg.vue";
+import CalculatorSvg from "../atoms/icon-svg/CalculatorSvg.vue";
 
 export default {
   functional: true,
