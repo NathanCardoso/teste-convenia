@@ -9,6 +9,7 @@
       v-if="!inputContent || !outputContent"
     />
   </div>
+	<TheFooter />
 </template>
 
 <script>
@@ -16,6 +17,7 @@ import TheHeader from "../components/molecules/TheHeader.vue";
 import FormApp from "../components/organisms/FormApp.vue";
 import MainOutputApp from "../components/organisms/MainOutputApp.vue";
 import ButtonApp from "../components/atoms/button/ButtonApp.vue";
+import TheFooter from "../components/molecules/TheFooter.vue"
 import useResize from "../composable/useResize";
 import { useCalculatorStore } from "../stores/calculatorStore";
 
@@ -26,6 +28,7 @@ export default {
     FormApp,
     MainOutputApp,
     ButtonApp,
+		TheFooter
   },
   data() {
     return {
