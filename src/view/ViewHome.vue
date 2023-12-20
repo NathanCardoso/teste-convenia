@@ -1,8 +1,8 @@
 <template>
   <TheHeader />
   <div class="page-home">
-    <FormApp class="animeLeft" />
-    <MainOutputApp class="animeLeft" />
+    <FormApp class="animeLeft" v-show="inputContent" />
+    <MainOutputApp class="animeLeft" v-show="outputContent" />
     <ButtonApp
       :message="buttonMessage"
       @clicked="pageActive"
@@ -56,6 +56,12 @@ export default {
         this.buttonMessage = "Ver Resultado";
       }
     },
+  },
+	mounted() {
+    this.handleResize();
+  },
+  created() {
+    window.addEventListener("resize", this.handleResize);
   },
 };
 </script>
