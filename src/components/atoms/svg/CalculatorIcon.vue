@@ -22,6 +22,12 @@
   </div>
 </template>
 
+<script>
+export default {
+	name: "CalculatorIcon"
+}
+</script>
+
 <style>
 .calculator {
   width: 4.0625rem;
