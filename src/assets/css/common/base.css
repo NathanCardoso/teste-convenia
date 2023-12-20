@@ -1,0 +1,38 @@
+body {
+  background: var(--whiteSecondary);
+}
+
+#app {
+	height: 100vh;
+	padding: 0px 24px;
+	font-family: Arial, Helvetica, sans-serif;
+	display: flex;
+	flex-direction: column;
+}
+
+.animeLeft {
+  opacity: 0;
+  transform: translate(-20px);
+  animation: animeLeft 0.3s forwards;
+}
+
+@keyframes animeLeft {
+  to {
+    opacity: 1;
+    transform: initial;
+  }
+}
+
+:root {
+--purplePrimary: #8950FC;
+--purpleSecondary: #EEE5FF;
+--purpleThird: #A381E8;
+--grayPrimary: #857E7E;
+--graySecondary: #A8A7AB;
+--grayThird: #B5B5C3;
+--whitePrimary: #fff;
+--whiteSecondary: #F7F5F5;
+--orangePrimary: #EF6327;
+--orangeSecondary: #FEE7DD;
+--redPrimary: #f31;
+}
