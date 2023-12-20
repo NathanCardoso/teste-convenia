@@ -19,7 +19,7 @@ export default {
 </script>
 
 <style scoped>
-.page-app {
+.page-home {
   display: grid;
   grid-template-columns: 20rem 1fr;
   gap: 1rem;
@@ -28,14 +28,14 @@ export default {
 }
 
 @media screen and (max-width: 767px) {
-  .page-app {
+  .page-home {
     display: flex;
     flex-direction: column;
   }
-  .page-app .input-content {
+  .page-home .input-content {
     display: block;
   }
-  .page-app .output-content {
+  .page-home .output-content {
     display: none;
   }
 }
