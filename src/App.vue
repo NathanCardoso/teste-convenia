@@ -4,15 +4,15 @@
 </template>
 
 <script>
-import LoadingApp from "./components/atoms/loading/LoadingApp"
 import ViewHome from "./view/ViewHome.vue"
+import LoadingApp from "./components/atoms/loading/LoadingApp.vue"
 import { useCalculatorStore } from "./stores/calculatorStore";
 
 export default {
 	name: "App",
 	components: {
-		ViewHome,
-		LoadingApp
+		LoadingApp,
+		ViewHome
 	},
 	setup() {
 		const calculatorStore = useCalculatorStore()
@@ -25,12 +25,6 @@ export default {
 		loading() {
 			return this.calculatorStore.getLoadingRequest
 		}
-	},
-	mounted() {
-		console.log(this.loading)
-		setTimeout(() => {
-			this.lalala = false
-		}, 5000)
 	}
 }
 </script>

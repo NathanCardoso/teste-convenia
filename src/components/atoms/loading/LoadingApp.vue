@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: "PageLoading",
+  name: "LoadingApp",
 	props: {
 		active: {
 			type: Boolean
