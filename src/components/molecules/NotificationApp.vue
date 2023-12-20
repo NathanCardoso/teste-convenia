@@ -6,7 +6,7 @@
 
 <script>
 import ParagraphApp from "../atoms/paragraph/ParagraphApp.vue";
-import { useCalculatorStore } from "../../store/CalculatorStore";
+import { useCalculatorStore } from "../../stores/calculatorStore";
 
 export default {
   name: "NotificationApp",
