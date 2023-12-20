@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import { useCalculatorStore } from "../../../store/CalculatorStore";
+import { useCalculatorStore } from "../../../stores/calculatorStore";
 
 export default {
   name: "InputToggle",

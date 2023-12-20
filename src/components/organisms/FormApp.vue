@@ -2,9 +2,9 @@
   <form class="form-app">
     <InputBox message="Selecione a moeda">
       <div class="form-app__input-toggle">
-        <ParagraphComponent message="Euro" />
+        <ParagraphApp message="Euro" />
         <InputToggle @toggle="requestRestConvertCurrencyBRL" />
-        <ParagraphComponent message="Dólar" />
+        <ParagraphApp message="Dólar" />
       </div>
     </InputBox>
     <InputBox message="Digite abaixo o valor">
@@ -23,9 +23,9 @@
 import InputBox from "../molecules/InputBox.vue";
 import InputToggle from "../atoms/input/InputToggle.vue";
 import InputMoney from "../atoms/input/InputMoney.vue";
-import ParagraphComponent from "../atoms/paragraph/ParagraphComponent.vue";
+import ParagraphApp from "../atoms/paragraph/ParagraphApp.vue";
 import InputRange from "../atoms/input/InputRange.vue";
-import { useCalculatorStore } from "../../store/CalculatorStore";
+import { useCalculatorStore } from "../../stores/calculatorStore";
 import useFetch from "../../composable/useFetch";
 import { OBJECT_REQUEST_REST } from "../../api-params/convertCurrencyRest";
 import { OBJECT_REQUEST_GRAPHQL } from "../../api-params/convertCurrencyGraphQl";
@@ -36,7 +36,7 @@ export default {
     InputBox,
     InputToggle,
     InputMoney,
-    ParagraphComponent,
+    ParagraphApp,
     InputRange,
   },
   setup() {

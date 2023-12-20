@@ -7,7 +7,7 @@
       </span>
     </label>
     <div class="input-range__wrapper">
-      <ParagraphComponent :message="normalizeMessage(minValue)" />
+      <ParagraphApp :message="normalizeMessage(minValue)" />
       <input
         type="range"
         id="range"
@@ -16,14 +16,14 @@
         v-model="rangeValue"
         :class="normalizeClass('input-range__input--')"
       />
-      <ParagraphComponent :message="normalizeMessage(maxValue)" />
+      <ParagraphApp :message="normalizeMessage(maxValue)" />
     </div>
   </div>
 </template>
 
 <script>
-import { useCalculatorStore } from "../../../store/calculatorStore";
-import ParagraphComponent from "../paragraph/ParagraphComponent.vue";
+import { useCalculatorStore } from "../../../stores/calculatorStore";
+import ParagraphApp from "../paragraph/ParagraphApp.vue";
 
 export default {
   name: "InputRange",
@@ -58,7 +58,7 @@ export default {
     },
   },
   components: {
-    ParagraphComponent,
+    ParagraphApp,
   },
   data() {
     return {
