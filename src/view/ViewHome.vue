@@ -2,18 +2,24 @@
   <TheHeader />
   <div class="page-home">
     <FormApp  class="animeLeft" />
+		<MainOutputApp class="animeLeft" />
+		<ButtonApp />
   </div>
 </template>
 
 <script>
 import TheHeader from "../components/molecules/TheHeader.vue";
 import FormApp from "../components/organisms/FormApp.vue";
+import MainOutputApp from "../components/organisms/MainOutputApp.vue"
+import ButtonApp from "../components/atoms/button/ButtonApp.vue"
 
 export default {
   name: "ViewHome",
   components: {
     TheHeader,
     FormApp,
+		MainOutputApp,
+		ButtonApp
   },
 };
 </script>
