@@ -1,5 +1,6 @@
 <template>
   <TheHeader />
+	<NotificationApp />
   <div class="page-home">
     <FormApp class="animeLeft" v-show="inputContent" />
     <MainOutputApp class="animeLeft" v-show="outputContent" />
@@ -14,6 +15,7 @@
 
 <script>
 import TheHeader from "../components/molecules/TheHeader.vue";
+import NotificationApp from "../components/molecules/NotificationApp.vue"
 import FormApp from "../components/organisms/FormApp.vue";
 import MainOutputApp from "../components/organisms/MainOutputApp.vue";
 import ButtonApp from "../components/atoms/button/ButtonApp.vue";
@@ -25,6 +27,7 @@ export default {
   name: "ViewHome",
   components: {
     TheHeader,
+		NotificationApp,
     FormApp,
     MainOutputApp,
     ButtonApp,
