@@ -1,6 +1,10 @@
 <template>
   <TheHeader />
-	<NotificationApp />
+  <NotificationApp
+    @finished="handleNotification"
+    :errorRequest="errorRequest"
+    v-if="notification || errorRequest"
+  />
   <div class="page-home">
     <FormApp class="animeLeft" v-show="inputContent" />
     <MainOutputApp class="animeLeft" v-show="outputContent" />
@@ -10,16 +14,16 @@
       v-if="!inputContent || !outputContent"
     />
   </div>
-	<TheFooter />
+  <TheFooter />
 </template>
 
 <script>
 import TheHeader from "../components/molecules/TheHeader.vue";
-import NotificationApp from "../components/molecules/NotificationApp.vue"
+import NotificationApp from "../components/molecules/NotificationApp.vue";
 import FormApp from "../components/organisms/FormApp.vue";
 import MainOutputApp from "../components/organisms/MainOutputApp.vue";
 import ButtonApp from "../components/atoms/button/ButtonApp.vue";
-import TheFooter from "../components/molecules/TheFooter.vue"
+import TheFooter from "../components/molecules/TheFooter.vue";
 import useResize from "../composable/useResize";
 import { useCalculatorStore } from "../stores/calculatorStore";
 
@@ -27,11 +31,11 @@ export default {
   name: "ViewHome",
   components: {
     TheHeader,
-		NotificationApp,
+    NotificationApp,
     FormApp,
     MainOutputApp,
     ButtonApp,
-		TheFooter
+    TheFooter,
   },
   data() {
     return {
@@ -50,6 +54,21 @@ export default {
       handleResize,
     };
   },
+  computed: {
+    currencyBRL() {
+      return this.calculatorStore.getCurrencyValueBRL;
+    },
+    errorRequest() {
+      return this.calculatorStore.getErrorRequest;
+    },
+  },
+  watch: {
+    currencyBRL() {
+      setTimeout(() => {
+        this.notification = true;
+      }, 400);
+    },
+  },
   methods: {
     pageActive() {
       if (this.inputContent) {
@@ -62,8 +81,14 @@ export default {
         this.buttonMessage = "Ver Resultado";
       }
     },
+		handleNotification() {
+      setTimeout(() => {
+        this.notification = false;
+        this.calculatorStore.setErrorRequest(false);
+      }, 300);
+    },
   },
-	mounted() {
+  mounted() {
     this.handleResize();
   },
   created() {

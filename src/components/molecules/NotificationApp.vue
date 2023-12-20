@@ -1,11 +1,11 @@
 <template>
   <div :class="notificationApp">
-    <ParagraphComponent :message="messageParagraph" :color="notificationColor" bold />
+    <ParagraphApp :message="messageParagraph" :color="notificationColor" bold />
   </div>
 </template>
 
 <script>
-import ParagraphComponent from "../atoms/paragraph/ParagraphComponent.vue";
+import ParagraphApp from "../atoms/paragraph/ParagraphApp.vue";
 import { useCalculatorStore } from "../../store/CalculatorStore";
 
 export default {
@@ -16,7 +16,7 @@ export default {
     },
   },
   components: {
-    ParagraphComponent,
+    ParagraphApp,
   },
   data() {
     return {
