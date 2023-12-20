@@ -1,26 +1,61 @@
 <template>
   <TheHeader />
   <div class="page-home">
-    <FormApp  class="animeLeft" />
-		<MainOutputApp class="animeLeft" />
-		<ButtonApp />
+    <FormApp class="animeLeft" />
+    <MainOutputApp class="animeLeft" />
+    <ButtonApp
+      :message="buttonMessage"
+      @clicked="pageActive"
+      v-if="!inputContent || !outputContent"
+    />
   </div>
 </template>
 
 <script>
 import TheHeader from "../components/molecules/TheHeader.vue";
 import FormApp from "../components/organisms/FormApp.vue";
-import MainOutputApp from "../components/organisms/MainOutputApp.vue"
-import ButtonApp from "../components/atoms/button/ButtonApp.vue"
-import useResize from "../composable/useResize"
+import MainOutputApp from "../components/organisms/MainOutputApp.vue";
+import ButtonApp from "../components/atoms/button/ButtonApp.vue";
+import useResize from "../composable/useResize";
+import { useCalculatorStore } from "../stores/calculatorStore";
 
 export default {
   name: "ViewHome",
   components: {
     TheHeader,
     FormApp,
-		MainOutputApp,
-		ButtonApp
+    MainOutputApp,
+    ButtonApp,
+  },
+  data() {
+    return {
+      buttonMessage: "Ver Resultado",
+      notification: false,
+    };
+  },
+  setup() {
+    const calculatorStore = useCalculatorStore();
+    const { inputContent, outputContent, handleResize } = useResize();
+
+    return {
+      calculatorStore,
+      inputContent,
+      outputContent,
+      handleResize,
+    };
+  },
+  methods: {
+    pageActive() {
+      if (this.inputContent) {
+        this.inputContent = false;
+        this.outputContent = true;
+        this.buttonMessage = "Ver Painel";
+      } else {
+        this.inputContent = true;
+        this.outputContent = false;
+        this.buttonMessage = "Ver Resultado";
+      }
+    },
   },
 };
 </script>
