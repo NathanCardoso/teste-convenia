@@ -92,8 +92,8 @@ export default {
         const tipResult = (this.moneyValue * tipValue) / 100;
         return tipResult;
       } else {
-				return 0
-			}
+        return 0;
+      }
     },
     forPeoples() {
       const peopleValue = this.calculatorStore.getPeopeles;
@@ -101,9 +101,9 @@ export default {
         const accountTotal = this.moneyValue + this.tipMoney;
         const forPeopleValueResult = accountTotal / peopleValue;
         return forPeopleValueResult;
-      } else{
-				return 0
-			}
+      } else {
+        return 0;
+      }
     },
     totalCurrentMoney() {
       const currentMoney = this.calculatorStore.getCurrencyValue;

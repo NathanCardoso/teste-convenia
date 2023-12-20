@@ -40,21 +40,21 @@ export default {
     InputRange,
   },
   setup() {
-		const calculatorStore = useCalculatorStore();
+    const calculatorStore = useCalculatorStore();
     const { data, error, loading, request } = useFetch();
 
     return {
-			calculatorStore,
+      calculatorStore,
       data,
       error,
       loading,
       request,
     };
   },
-	computed: {
+  computed: {
     currentCurrency() {
       return this.calculatorStore.getCurrency;
-    }
+    },
   },
   watch: {
     loading(newValue) {
@@ -78,15 +78,15 @@ export default {
     async requestGraphQlConvertCurrentBRL() {
       const { urlGraphQl, options } = OBJECT_REQUEST_GRAPHQL("BRL", this.currentCurrency);
       await this.request(urlGraphQl, options);
-			console.log(this.data)
+      console.log(this.data);
       const { rate } = this.data.data.currencyConversion.conversions[0];
       this.calculatorStore.setCurrencyValueBRL(rate);
     },
   },
-	beforeMount() {
-		this.requestRestConvertCurrencyBRL();
-		// this.requestGraphQlConvertCurrentBRL();
-	},
+  beforeMount() {
+    this.requestRestConvertCurrencyBRL();
+    // this.requestGraphQlConvertCurrentBRL();
+  },
 };
 </script>
 

@@ -1,10 +1,7 @@
 <template>
   <header class="header-section">
     <TitleSection message="Valor da Conta" />
-    <ParagraphApp
-      message="Veja abaixo os valores convertidos."
-      color="purple-third"
-    />
+    <ParagraphApp message="Veja abaixo os valores convertidos." color="purple-third" />
   </header>
 </template>
 

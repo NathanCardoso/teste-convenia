@@ -10,40 +10,40 @@
 <script>
 export default {
   name: "LoadingApp",
-	props: {
-		active: {
-			type: Boolean
-		}
-	},
-	computed: {
-		loadingClass() {
-			return this.active ? "loading--start" : "loading--end"
-		}
-	},
-	functional: true,
+  props: {
+    active: {
+      type: Boolean,
+    },
+  },
+  computed: {
+    loadingClass() {
+      return this.active ? "loading--start" : "loading--end";
+    },
+  },
+  functional: true,
 };
 </script>
 
 <style scoped>
 .loading {
   text-align: center;
-	height: 100vh;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	z-index: 1000;
-	background: var(--whitePrimary);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  background: var(--whitePrimary);
 }
 .loading.loading--start {
-	animation: animeStart 0.2s forwards;
+  animation: animeStart 0.2s forwards;
 }
 .loading.loading--end {
-	animation: animeEnd 0.3s forwards;
+  animation: animeEnd 0.3s forwards;
 }
 
 @keyframes animeStart {

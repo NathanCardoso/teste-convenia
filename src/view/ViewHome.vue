@@ -81,7 +81,7 @@ export default {
         this.buttonMessage = "Ver Resultado";
       }
     },
-		handleNotification() {
+    handleNotification() {
       setTimeout(() => {
         this.notification = false;
         this.calculatorStore.setErrorRequest(false);

@@ -24,8 +24,8 @@
 
 <script>
 export default {
-	name: "CalculatorIcon"
-}
+  name: "CalculatorIcon",
+};
 </script>
 
 <style>

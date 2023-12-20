@@ -1,10 +1,7 @@
 <template>
   <footer class="footer">
     <CalculatorIcon />
-    <ParagraphApp
-      message="Le Tip. Alguns direitos reservados"
-      color="white-primary"
-    />
+    <ParagraphApp message="Le Tip. Alguns direitos reservados" color="white-primary" />
   </footer>
 </template>
 

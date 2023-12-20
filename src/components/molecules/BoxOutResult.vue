@@ -8,7 +8,7 @@
 <script>
 export default {
   name: "BoxOutResult",
-	functional: true
+  functional: true,
 };
 </script>
 

@@ -25,15 +25,15 @@ export default {
   watch: {
     currency() {
       this.currencyToggle();
-			this.$emit("toggle")
-    }
+      this.$emit("toggle");
+    },
   },
   methods: {
     currencyToggle() {
       const currentCurrency = this.currency ? "USD" : "EUR";
       this.calculatorStore.setCurrency(currentCurrency);
-    }
-  }
+    },
+  },
 };
 </script>
 
